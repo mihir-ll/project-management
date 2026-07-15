@@ -1,7 +1,7 @@
 .project-task-form-page {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1rem;
   padding: 0.25rem 0 1rem;
 }
 
@@ -13,14 +13,16 @@
 
 .project-task-form-page__hero,
 .project-task-form-page__panel {
-  border: 1px solid #d9dfe8;
-  border-radius: 10px;
-  background: #fff;
-  box-shadow: none;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(124, 102, 167, 0.12), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #fbfbfe 100%);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
 }
 
 .project-task-form-page__hero {
-  padding: 0.9rem 1rem 1rem;
+  padding: 1.25rem;
 }
 
 .project-task-form-page__hero-top,
@@ -37,7 +39,7 @@
   align-items: center;
   gap: 0.45rem;
   color: #5b6475;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
 }
 
 .project-task-form-page__crumb-project {
@@ -62,12 +64,12 @@
 
 .project-task-form-page__state-pill {
   border-radius: 999px;
-  border: 1px solid #d7deea;
-  background: #fff;
-  color: #556277;
+  border: 1px solid rgba(99, 102, 241, 0.18);
+  background: rgba(99, 102, 241, 0.1);
+  color: #5346b3;
   font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.45rem 1rem;
+  font-weight: 700;
+  padding: 0.45rem 0.9rem;
 }
 
 .project-task-form-page__syncing {
@@ -76,7 +78,7 @@
 }
 
 .project-task-form-page__stepper {
-  margin-top: 0.9rem;
+  margin-top: 1rem;
 }
 
 .project-task-form-page__stepper-track {
@@ -87,18 +89,18 @@
 }
 
 .project-task-form-page__step {
-  border: 1px solid #d7deea;
+  border: 1px solid #d8deee;
   border-radius: 0;
-  background: #eef2f7;
+  background: #eef1f7;
   clip-path: polygon(0 0, calc(100% - 18px) 0, 100% 50%, calc(100% - 18px) 100%, 0 100%, 14px 50%);
-  color: #4f5c6f;
+  color: #4b5563;
   cursor: pointer;
   flex: 0 0 auto;
-  font-size: 0.86rem;
-  font-weight: 600;
+  font-size: 0.88rem;
+  font-weight: 700;
   margin-right: -10px;
-  min-height: 34px;
-  padding: 0.44rem 1.15rem 0.44rem 1.45rem;
+  min-height: 42px;
+  padding: 0.62rem 1.35rem 0.62rem 1.7rem;
   position: relative;
   transition:
     background-color 0.18s ease,
@@ -130,8 +132,8 @@
 }
 
 .project-task-form-page__step--completed {
-  background: #edf1fb;
-  border-color: #d4dcef;
+  background: #e7ebf7;
+  border-color: #cfd6eb;
   color: #5b51b3;
 }
 
@@ -148,91 +150,50 @@
   white-space: nowrap;
 }
 
-.project-task-form-page__record-card {
-  margin-top: 0.65rem;
-  border: 1px solid #d9dfe8;
-  border-radius: 8px;
-  background: #fff;
-  padding: 1rem 1rem 0;
+@media (max-width: 768px) {
+  .project-task-form-page__step {
+    min-height: 38px;
+    padding-right: 1.15rem;
+    padding-left: 1.45rem;
+  }
 }
 
-.project-task-form-page__record-header {
+.project-task-form-page__summary-grid {
+  display: grid;
+  gap: 0.85rem;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.project-task-form-page__summary-card {
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0.9rem 1rem;
+}
+
+.project-task-form-page__summary-heading {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
+  align-items: center;
+  gap: 0.45rem;
+  color: #667085;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
-.project-task-form-page__record-title-wrap {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.8rem;
-  min-width: 0;
-}
-
-.project-task-form-page__record-star {
-  color: #63748b;
-  font-size: 1.9rem;
-  line-height: 1;
-  margin-top: 0.08rem;
-}
-
-.project-task-form-page__record-title {
-  margin: 0;
-  color: #1f2937;
-  font-size: 1.2rem;
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-.project-task-form-page__record-stage-pill {
-  border: 1px solid #d7deea;
-  border-radius: 999px;
-  background: #fff;
-  color: #556277;
-  flex: 0 0 auto;
-  font-size: 0.82rem;
-  font-weight: 600;
-  padding: 0.5rem 0.95rem;
-}
-
-.project-task-form-page__record-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  padding: 1rem 0 1.1rem;
-}
-
-.project-task-form-page__record-column {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.project-task-form-page__field-row {
-  display: grid;
-  gap: 0.35rem 1rem;
-  grid-template-columns: 84px minmax(0, 1fr);
-  align-items: start;
-}
-
-.project-task-form-page__field-label {
-  color: #111827;
+.project-task-form-page__summary-value {
+  color: #172033;
   font-size: 0.98rem;
-  font-weight: 500;
-}
-
-.project-task-form-page__field-value {
-  color: #334155;
-  font-size: 0.96rem;
-  line-height: 1.45;
-  min-width: 0;
+  font-weight: 700;
+  margin-top: 0.45rem;
 }
 
 .project-task-form-page__content {
   display: grid;
   gap: 1rem;
-  grid-template-columns: minmax(0, 1fr) 33%;
-  align-items: start;
+  grid-template-columns: minmax(0, 1fr) 360px;
 }
 
 .project-task-form-page__main,
@@ -246,74 +207,12 @@
 
 .project-task-form-page__panel--form .solid-panel-content,
 .project-task-form-page__panel--chatter .solid-panel-content {
-  padding: 0.85rem;
-}
-
-.project-task-form-page__panel--form .solid-panel-content {
-  padding: 0;
+  padding: 1rem;
 }
 
 .project-task-form-page__panel--form .solid-panel-header,
 .project-task-form-page__panel--chatter .solid-panel-header {
-  padding: 0.9rem 1rem 0;
-}
-
-.project-task-form-page__panel--form .solid-form-wrapper {
-  align-items: stretch;
-  background: transparent !important;
-  gap: 0;
-  min-height: auto;
-  padding: 0;
-}
-
-.project-task-form-page__panel--form .solid-form-section {
-  background: transparent;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  min-height: auto;
-}
-
-.project-task-form-page__panel--form .solid-form-section > form {
-  background: transparent;
-}
-
-.project-task-form-page__panel--form .solid-form-wrapper .solid-form-content {
-  background: transparent;
-  overflow: visible;
-}
-
-.project-task-form-page__panel--form .solid-form-wrapper .solid-form-content.solid-form-view,
-.project-task-form-page__panel--form .solid-form-wrapper .solid-form-content.solid-edit-mode-form-content,
-.project-task-form-page__panel--form .solid-form-wrapper .solid-form-content.solid-create-mode-form-content {
-  background: transparent;
-  min-height: auto;
-}
-
-.project-task-form-page__panel--form .solid-form-footer {
-  border-top: 1px solid #edf0f5;
-  margin: 0;
-  padding: 0 1rem 1rem;
-}
-
-.project-task-form-page__panel--form .solid-notebook {
-  margin: 0;
-}
-
-.project-task-form-page__panel--form .solid-form-action-header,
-.project-task-form-page__panel--form .page-header {
-  background: #fff;
-  border-bottom: 1px solid #e6ebf2;
-  box-shadow: none;
-}
-
-.project-task-form-page__panel--form .solid-form-content {
-  padding-top: 0.5rem !important;
-}
-
-.project-task-form-page__panel--form .solid-notebook-tabs,
-.project-task-form-page__panel--form [role="tablist"] {
-  border-bottom: 1px solid #e6ebf2;
+  padding: 1rem 1rem 0;
 }
 
 .project-task-form-page__panel--chatter {
@@ -323,8 +222,8 @@
 .project-task-form-page__panel-title {
   margin: 0;
   color: #111827;
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.15rem;
+  font-weight: 800;
 }
 
 .project-task-form-page__panel-subtitle {
@@ -353,20 +252,11 @@
   max-height: 620px;
 }
 
-.project-task-form-page__panel--chatter .solid-chatter-body {
-  background: #fff;
-}
-
-.project-task-form-page__panel--chatter .solid-panel-header {
-  border-bottom: 1px solid #e6ebf2;
-  padding-bottom: 0.75rem;
-}
-
-.project-task-form-page__panel--chatter .solid-panel-content {
-  padding-top: 0.75rem;
-}
-
 @media (max-width: 1280px) {
+  .project-task-form-page__summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .project-task-form-page__content {
     grid-template-columns: 1fr;
   }
@@ -379,8 +269,7 @@
   }
 
   .project-task-form-page__hero-top,
-  .project-task-form-page__panel-header,
-  .project-task-form-page__record-header {
+  .project-task-form-page__panel-header {
     flex-direction: column;
     align-items: stretch;
   }
@@ -389,25 +278,13 @@
     justify-content: space-between;
   }
 
-  .project-task-form-page__step {
-    min-height: 38px;
-    padding-right: 1.15rem;
-    padding-left: 1.45rem;
-  }
-
-  .project-task-form-page__record-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .project-task-form-page__field-row {
-    grid-template-columns: 1fr;
-    gap: 0.15rem;
+  .project-task-form-page__summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 560px) {
-  .project-task-form-page__record-title {
-    font-size: 1.05rem;
+  .project-task-form-page__summary-grid {
+    grid-template-columns: 1fr;
   }
 }
