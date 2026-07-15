@@ -1,0 +1,291 @@
+.project-task-kanban-card {
+  --project-kanban-accent: #2563eb;
+  --project-kanban-accent-soft: rgba(37, 99, 235, 0.12);
+  --project-kanban-chip-bg: rgba(37, 99, 235, 0.1);
+  --project-kanban-chip-text: #1d4ed8;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  width: 100%;
+  min-height: 128px;
+  overflow: hidden;
+  border: 1px solid #d8dee9;
+  border-radius: 0;
+  padding: 10px 12px 9px;
+  background: #fff;
+  box-shadow: none;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.project-task-kanban-card:hover {
+  border-color: #b9c5d6;
+  background: #fcfdff;
+}
+
+.project-task-kanban-card__header,
+.project-task-kanban-card__header-left,
+.project-task-kanban-card__header-right,
+.project-task-kanban-card__chips,
+.project-task-kanban-card__signals,
+.project-task-kanban-card__footer,
+.project-task-kanban-card__footer-left,
+.project-task-kanban-card__footer-right,
+.project-task-kanban-card__icon-label,
+.project-task-kanban-card__signal {
+  display: flex;
+  align-items: center;
+}
+
+.project-task-kanban-card__header {
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.project-task-kanban-card__header-right {
+  gap: 8px;
+}
+
+.project-task-kanban-card__priority,
+.project-task-kanban-card__project-avatar,
+.project-task-kanban-card__stage {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.project-task-kanban-card__priority {
+  padding: 4px 8px;
+  background: var(--project-kanban-chip-bg);
+  color: var(--project-kanban-chip-text);
+}
+
+.project-task-kanban-card__project-avatar {
+  min-width: 24px;
+  height: 24px;
+  padding: 0 6px;
+  background: var(--project-kanban-accent);
+  color: #fff;
+}
+
+.project-task-kanban-card__menu {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border: 0;
+  background: transparent;
+  color: #64748b;
+  cursor: default;
+  padding: 0;
+}
+
+.project-task-kanban-card__title {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #111827;
+  font-size: 0.97rem;
+  font-weight: 500;
+  line-height: 1.22;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.project-task-kanban-card__chips {
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-task-kanban-card__chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.project-task-kanban-card__chip--milestone {
+  background: #f6d7ef;
+  color: #8b3b76;
+}
+
+.project-task-kanban-card__chip--project {
+  background: #dfe5ff;
+  color: #4257b2;
+}
+
+.project-task-kanban-card__chip--state {
+  background: #eef2f7;
+  color: #526071;
+}
+
+.project-task-kanban-card__chip--info {
+  background: #dceafe;
+  color: #1d4ed8;
+}
+
+.project-task-kanban-card__chip--warning {
+  background: #fde7d3;
+  color: #b45309;
+}
+
+.project-task-kanban-card__chip--success {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.project-task-kanban-card__chip--muted {
+  background: #e5e7eb;
+  color: #4b5563;
+}
+
+.project-task-kanban-card__signals {
+  gap: 10px;
+  color: #64748b;
+  min-height: 16px;
+}
+
+.project-task-kanban-card__signal {
+  gap: 4px;
+  font-size: 0.74rem;
+  line-height: 1;
+}
+
+.project-task-kanban-card__signal .solid-icon {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.project-task-kanban-card__meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  padding-top: 1px;
+}
+
+.project-task-kanban-card__meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.project-task-kanban-card__meta-item strong {
+  color: #334155;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-task-kanban-card__meta-item small {
+  color: #94a3b8;
+  font-size: 0.64rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-task-kanban-card__footer {
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 7px;
+  border-top: 1px solid #edf1f5;
+}
+
+.project-task-kanban-card__footer-left,
+.project-task-kanban-card__footer-right {
+  gap: 10px;
+  min-width: 0;
+}
+
+.project-task-kanban-card__icon-label {
+  gap: 5px;
+  color: #64748b;
+  font-size: 0.72rem;
+  min-width: 0;
+}
+
+.project-task-kanban-card__icon-label .si {
+  font-size: 0.88rem;
+}
+
+.project-task-kanban-card__deadline {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-task-kanban-card__deadline--overdue {
+  color: #dc2626;
+}
+
+.project-task-kanban-card__stage {
+  max-width: 140px;
+  padding: 3px 8px;
+  background: #f3f4f6;
+  color: #475569;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+html.dark .project-task-kanban-card,
+[data-theme="dark"] .project-task-kanban-card {
+  border-color: #334155;
+  background: #111827;
+}
+
+html.dark .project-task-kanban-card:hover,
+[data-theme="dark"] .project-task-kanban-card:hover {
+  border-color: #475569;
+  background: #0f172a;
+}
+
+html.dark .project-task-kanban-card__title,
+[data-theme="dark"] .project-task-kanban-card__title {
+  color: #f8fafc;
+}
+
+html.dark .project-task-kanban-card__meta-item strong,
+[data-theme="dark"] .project-task-kanban-card__meta-item strong {
+  color: #dbe4ee;
+}
+
+html.dark .project-task-kanban-card__meta-item small,
+html.dark .project-task-kanban-card__icon-label,
+html.dark .project-task-kanban-card__menu,
+html.dark .project-task-kanban-card__stage,
+html.dark .project-task-kanban-card__signals,
+[data-theme="dark"] .project-task-kanban-card__meta-item small,
+[data-theme="dark"] .project-task-kanban-card__icon-label,
+[data-theme="dark"] .project-task-kanban-card__menu,
+[data-theme="dark"] .project-task-kanban-card__stage,
+[data-theme="dark"] .project-task-kanban-card__signals {
+  color: #94a3b8;
+}
+
+html.dark .project-task-kanban-card__footer,
+[data-theme="dark"] .project-task-kanban-card__footer {
+  border-top-color: #243041;
+}
+
+html.dark .project-task-kanban-card__stage,
+[data-theme="dark"] .project-task-kanban-card__stage {
+  background: #1f2937;
+}
